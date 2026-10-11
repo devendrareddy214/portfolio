@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, Github, Linkedin, Mail, Code2, Download, Sparkles } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-export default function Hero() {
+export default function Hero({ onOpenResume }) {
   const { personal } = portfolioData;
 
   return (
@@ -51,15 +51,13 @@ export default function Hero() {
               <span>Get in Touch</span>
             </a>
 
-            <a
-              href={personal.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 font-medium text-sm transition-colors"
+            <button
+              onClick={onOpenResume}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 font-medium text-sm transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900"
             >
               <Download className="w-4 h-4" />
-              <span>Resume PDF</span>
-            </a>
+              <span>View Resume</span>
+            </button>
           </div>
 
           {/* Social Links */}

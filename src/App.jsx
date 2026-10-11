@@ -8,6 +8,7 @@ import Experience from './components/Experience';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ResumeModal from './components/ResumeModal';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -17,6 +18,7 @@ export default function App() {
   });
 
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -45,14 +47,18 @@ export default function App() {
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
       {/* Scroll Progress Bar */}
       <div
-        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-sky-500 via-indigo-500 to-cyan-400 z-50 transition-all duration-75"
+        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-sky-500 via-indigo-500 to-cyan-400 z-50 transition-all duration-75 print:hidden"
         style={{ width: `${scrollProgress}%` }}
       />
 
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Navbar
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        onOpenResume={() => setIsResumeOpen(true)}
+      />
 
       <main>
-        <Hero />
+        <Hero onOpenResume={() => setIsResumeOpen(true)} />
         <About />
         <Skills />
         <Projects />
@@ -61,7 +67,12 @@ export default function App() {
         <Contact />
       </main>
 
-      <Footer />
+      <Footer onOpenResume={() => setIsResumeOpen(true)} />
+
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+      />
     </div>
   );
 }

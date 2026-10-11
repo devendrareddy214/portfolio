@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X, FileText, Code } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-export default function Navbar({ darkMode, setDarkMode }) {
+export default function Navbar({ darkMode, setDarkMode, onOpenResume }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -41,7 +41,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 print:hidden ${
         isScrolled
           ? 'bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/80 shadow-sm'
           : 'bg-transparent'
@@ -93,15 +93,13 @@ export default function Navbar({ darkMode, setDarkMode }) {
           </button>
 
           {/* Resume Button */}
-          <a
-            href={portfolioData.personal.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all shadow-sm hover:shadow"
+          <button
+            onClick={onOpenResume}
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all shadow-sm hover:shadow active:scale-95"
           >
             <FileText className="w-3.5 h-3.5" />
             <span>Resume</span>
-          </a>
+          </button>
         </div>
 
         {/* Mobile Menu & Theme Toggle */}
@@ -138,16 +136,16 @@ export default function Navbar({ darkMode, setDarkMode }) {
             </a>
           ))}
           <div className="pt-3">
-            <a
-              href={portfolioData.personal.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenResume();
+              }}
               className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-medium text-sm shadow-sm"
             >
               <FileText className="w-4 h-4" />
               <span>View Resume</span>
-            </a>
+            </button>
           </div>
         </div>
       )}

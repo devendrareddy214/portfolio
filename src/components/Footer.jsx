@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowUp, Github, Linkedin, Heart } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-export default function Footer() {
+export default function Footer({ onOpenResume }) {
   const { personal } = portfolioData;
 
   const scrollToTop = () => {
@@ -43,6 +43,13 @@ export default function Footer() {
           >
             <Linkedin className="w-4 h-4" />
           </a>
+
+          <button
+            onClick={onOpenResume}
+            className="px-2.5 py-1 text-xs font-semibold rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+          >
+            Resume
+          </button>
 
           <button
             onClick={scrollToTop}

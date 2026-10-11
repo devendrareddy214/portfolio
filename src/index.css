@@ -28,3 +28,20 @@
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #475569;
 }
+
+/* Print styling for Resume */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  header, footer, main {
+    display: none !important;
+  }
+  #printable-resume {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
