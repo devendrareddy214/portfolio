@@ -169,7 +169,7 @@ export const portfolioData = {
       degree: "Secondary School Certificate (SSC)",
       institution: "Al Qumar EM High School",
       period: "2020 – 2021",
-      score: "Marks: 984 / 1000",
+      score: "Marks: 586/ 600",
       location: "Andhra Pradesh",
       courses: ["General Science", "Mathematics", "English", "Social Studies"],
     },
