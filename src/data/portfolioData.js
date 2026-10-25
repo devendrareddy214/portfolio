@@ -4,19 +4,20 @@ export const portfolioData = {
     title: "Full-Stack Developer",
     status: "Open to Full-Stack & Software Engineering Opportunities",
     bio: "Motivated and detail-oriented Full-Stack Developer with hands-on experience building scalable, secure, and user-friendly web applications using React.js, Node.js, Django, and cloud technologies.",
-    longBio: "I am a Full-Stack Developer currently pursuing B.Tech in Information Technology at Vignan's Foundation for Science, Technology & Research. I specialize in building end-to-end web applications from responsive frontend interfaces to secure backend architectures. Proficient in REST API development, relational and NoSQL databases, and CI/CD deployment pipelines with a solid foundation in Python, JavaScript, and SQL.",
+    longBio:
+      "I am a Full-Stack Developer currently pursuing B.Tech in Information Technology at Vignan's Foundation for Science, Technology & Research. I specialize in building end-to-end web applications from responsive frontend interfaces to secure backend architectures. Proficient in REST API development, relational and NoSQL databases, and CI/CD deployment pipelines with a solid foundation in Python, JavaScript, and SQL.",
     location: "Vadlamudi, Guntur, Andhra Pradesh, India",
     email: "devendrareddy214@gmail.com",
     phone: "+91-9640372755",
     github: "https://github.com/devendrareddy214",
     linkedin: "https://www.linkedin.com/in/devendra-reddy-bala-7bb416314",
     leetcode: "https://leetcode.com/devendrareddy214",
-    resumeUrl: "#", // User can link their PDF resume
+    resumeUrl: "#",
     stats: [
       { label: "B.Tech CGPA", value: "7.01 / 10" },
       { label: "Core Projects", value: "2+" },
       { label: "Tech Stack Count", value: "14+" },
-      { label: "SSC Board Score", value: "984 / 1000" },
+      { label: "SSC Marks", value: "584" },
     ],
   },
 
@@ -169,7 +170,7 @@ export const portfolioData = {
       degree: "Secondary School Certificate (SSC)",
       institution: "Al Qumar EM High School",
       period: "2020 – 2021",
-      score: "Marks: 586/ 600",
+      score: "Marks: 584",
       location: "Andhra Pradesh",
       courses: ["General Science", "Mathematics", "English", "Social Studies"],
     },
@@ -201,7 +202,7 @@ export const portfolioData = {
     {
       title: "Secondary School Academic Honor",
       description:
-        "Secured 984 marks in SSC Board examinations at Al Qumar EM High School, reflecting consistent academic dedication.",
+        "Secured 584 marks in SSC examinations at Al Qumar EM High School, reflecting consistent academic dedication.",
     },
     {
       title: "Full-Stack Project Deployments",
